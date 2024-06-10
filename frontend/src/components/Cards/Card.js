@@ -1,17 +1,19 @@
 import React from 'react';
 import './Card.css';
+import Icon from '../Icons/Icon';
 
-const Card = ({ title, content }) => {
-    return (
-        <div className="card">
-            <div className="card-header"> {/* Light Blue header */}
-                {title}
-            </div>
-            <div className="card-content">
-                {content}
-            </div>
-        </div>
-    );
-}
+const Card = ({ title, value, icon }) => {
+  return (
+    <div className="card">
+      <div className="card__header">
+        <Icon src={icon} alt={title} />
+        <h3>{title}</h3>
+      </div>
+      <div className="card__body">
+        <p>{value}</p>
+      </div>
+    </div>
+  );
+};
 
 export default Card;
