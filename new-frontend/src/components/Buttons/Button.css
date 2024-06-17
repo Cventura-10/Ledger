@@ -1,0 +1,16 @@
+/* src/components/Buttons/Button.css */
+button {
+    background-color: #003366;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #6699cc;
+  }
+  

@@ -1,9 +1,0 @@
-.AccountingDropdown {
-    background-color: #003366; /* Primary color */
-    color: #FFFFFF; /* White text */
-    font-family: 'Roboto', sans-serif;
-}
-
-.AccountingDropdown:hover {
-    background-color: #6699CC; /* Secondary color for hover */
-}

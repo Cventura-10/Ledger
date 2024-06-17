@@ -1,0 +1,32 @@
+/* src/Layout/Header.css */
+header {
+    background-color: #003366;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin-right: 16px;
+  }
+  
+  header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  header nav ul li a:hover {
+    color: #ff9900;
+  }
+  

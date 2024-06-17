@@ -1,0 +1,9 @@
+/* src/components/GraphsCharts/GraphsCharts.css */
+.chart-container {
+    background-color: #003366;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+    padding: 16px;
+  }
+  

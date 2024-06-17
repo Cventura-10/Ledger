@@ -1,12 +1,7 @@
-// backend/utils/utilsHelper.js
-
-const utilsHelper = {
-    formatData: (data) => {
-        // Add your specific formatting logic here
-        const formattedData = /* Your formatting logic */;
-        return formattedData;
-    },
-    // Add more utility functions as needed for your project
-};
-
-module.exports = utilsHelper;
+const generateToken = (payload, expiresIn = '1d') => {
+    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn });
+    return token;
+  };
+  
+  module.exports = { generateToken };
+  

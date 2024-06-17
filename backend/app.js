@@ -1,24 +1,43 @@
 const express = require('express');
-require('dotenv').config();
-const mongoose = require('mongoose');
-
+const { MongoClient } = require('mongodb');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const path = require('path');
+const port = 5000;
 
-// Connecting to MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('Connected to MongoDB...'))
-    .catch(err => console.error('Could not connect to MongoDB...', err));
+// MongoDB connection
+const mongoUrl = 'mongodb://localhost:27017';
+const dbName = 'ledger-app';
 
-// JSON Middleware
-app.use(express.json());
+// Serve the built frontend application
+app.use(express.static(path.join(__dirname, '../new-frontend/build')));
 
-// Sample route
-app.get('/', (req, res) => {
-    res.send('Welcome to the Ledger App backend!');
-});
+// Connect to MongoDB
+MongoClient.connect(mongoUrl, (err, client) => {
+  if (err) {
+    console.error('Error connecting to MongoDB:', err);
+    return;
+  }
 
-// Listening to the server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log('Connected to MongoDB');
+  const db = client.db(dbName);
+
+  // API endpoint
+  app.get('/api', (req, res) => {
+    db.collection('transactions').find({}).toArray((err, transactions) => {
+      if (err) {
+        console.error('Error fetching transactions:', err);
+        res.status(500).json({ message: 'Error fetching transactions' });
+        return;
+      }
+      res.status(200).json(transactions);
+    });
+  });
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../new-frontend/build', 'index.html'));
+  });
+
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
 });

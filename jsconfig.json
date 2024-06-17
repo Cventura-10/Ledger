@@ -1,0 +1,10 @@
+// jsconfig.json or tsconfig.json
+{
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "@assets/*": ["assets/*"]
+      }
+    }
+  }
+  

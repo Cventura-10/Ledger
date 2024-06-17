@@ -1,0 +1,10 @@
+/* src/Layout/Footer.css */
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 16px;
+    text-align: center;
+  }
+  

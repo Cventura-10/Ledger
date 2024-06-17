@@ -1,0 +1,21 @@
+/* src/components/Cards/Card.css */
+.card {
+    background-color: #003366;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    border-radius: 4px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #6699cc;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: 0;
+  }
+  
