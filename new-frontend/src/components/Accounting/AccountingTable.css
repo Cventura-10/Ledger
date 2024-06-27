@@ -1,0 +1,21 @@
+/* Accounting Table Styles */
+.accounting-table-container {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #003366;
+    color: #ffffff;
+}

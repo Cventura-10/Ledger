@@ -1,8 +1,8 @@
 import React from 'react';
-import { colors, typography } from '../designSystem';
-import dashboardIcon from '../assets/icons/dashboard-icon.svg';
-import salesIcon from '../assets/icons/sales-icon.svg';
-import productIcon from '../assets/icons/product-icon.svg';
+import { colors, typography } from '../../designSystem';
+import dashboardIcon from '../../assets/icons/dashboard-icon.svg';
+import salesIcon from '../../assets/icons/sales-icon.svg';
+import productIcon from '../../assets/icons/product-icon.svg';
 import './Header.css';
 
 const Header = () => {
@@ -17,8 +17,8 @@ const Header = () => {
       }}
     >
       <nav>
-        <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-          <li style={{ marginRight: '16px', display: 'inline-block' }}>
+        <ul style={{ listStyleType: 'none', display: 'flex', gap: '16px', margin: 0, padding: 0 }}>
+          <li style={{ display: 'flex', alignItems: 'center' }}>
             <button
               style={{
                 display: 'flex',
@@ -30,11 +30,11 @@ const Header = () => {
                 padding: 0,
               }}
             >
-              <img src={dashboardIcon} alt="Dashboard" style={{ marginRight: '8px' }} />
+              <img src={dashboardIcon} alt="Dashboard" style={{ marginRight: '8px', height: '24px' }} />
               Dashboard
             </button>
           </li>
-          <li style={{ marginRight: '16px', display: 'inline-block' }}>
+          <li style={{ display: 'flex', alignItems: 'center' }}>
             <button
               style={{
                 display: 'flex',
@@ -46,11 +46,11 @@ const Header = () => {
                 padding: 0,
               }}
             >
-              <img src={salesIcon} alt="Sales" style={{ marginRight: '8px' }} />
+              <img src={salesIcon} alt="Sales" style={{ marginRight: '8px', height: '24px' }} />
               Sales
             </button>
           </li>
-          <li style={{ display: 'inline-block' }}>
+          <li style={{ display: 'flex', alignItems: 'center' }}>
             <button
               style={{
                 display: 'flex',
@@ -62,7 +62,7 @@ const Header = () => {
                 padding: 0,
               }}
             >
-              <img src={productIcon} alt="Products" style={{ marginRight: '8px' }} />
+              <img src={productIcon} alt="Products" style={{ marginRight: '8px', height: '24px' }} />
               Products
             </button>
           </li>

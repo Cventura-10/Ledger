@@ -1,56 +1,44 @@
-// src/Pages/DashboardPage.js
 import React from 'react';
-import Header from '../Layout/Header';
-import Footer from '../Layout/Footer';
-import GraphsCharts from '../components/GraphsCharts/GraphsCharts';
-import Card from '../components/Cards/Card';
-import Button from '../components/Buttons/Button';
-import AccountingDropdown from '../components/AccountingDropdown/AccountingDropdown';
 import './DashboardPage.css';
+import Card from '../components/Cards/Card';
+import GraphsCharts from '../components/GraphsCharts/GraphsCharts';
 
-const DashboardPage = () => {
-  const chartData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    datasets: [
-      {
-        label: 'Revenue',
-        data: [12, 19, 3, 5, 2, 3, 20, 15, 8, 10, 12, 18],
-        fill: false,
-        borderColor: '#FF9900',
-        tension: 0.1,
-      },
-    ],
-  };
+const DashboardPage = ({ revenueData, isLoading, isSlowConnection, error }) => {
+  if (isLoading) {
+    return (
+      <div className="dashboard-container">
+        <Card title="Loading...">
+          <div>{isSlowConnection ? 'Slow network connection. Please wait...' : 'Loading revenue data...'}</div>
+        </Card>
+      </div>
+    );
+  }
 
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-  };
+  if (error) {
+    return (
+      <div className="dashboard-container">
+        <Card title="Error">
+          <div>An error occurred while fetching the revenue data: {error}</div>
+        </Card>
+      </div>
+    );
+  }
 
-  const dropdownOptions = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
-  ];
+  if (!revenueData || revenueData.length === 0) {
+    return (
+      <div className="dashboard-container">
+        <Card title="Revenue Data Not Available">
+          <div>Data is currently not available. Please check back later.</div>
+        </Card>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <Header />
-      <div className="dashboard-container">
-        <div className="dashboard-left">
-          <Card title="Revenue Chart">
-            <GraphsCharts data={chartData} options={chartOptions} />
-          </Card>
-        </div>
-        <div className="dashboard-right">
-          <Card title="Quick Actions">
-            <Button>Action 1</Button>
-            <Button>Action 2</Button>
-            <AccountingDropdown options={dropdownOptions} />
-          </Card>
-        </div>
-      </div>
-      <Footer />
+    <div className="dashboard-container">
+      <Card title="Revenue Chart">
+        <GraphsCharts data={revenueData} />
+      </Card>
     </div>
   );
 };

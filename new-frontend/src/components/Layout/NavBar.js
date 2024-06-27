@@ -1,8 +1,9 @@
 import React from 'react';
-import { colors, typography } from '../designSystem';
-import dashboardIcon from '../assets/icons/dashboard-icon.svg';
-import salesIcon from '../assets/icons/sales-icon.svg';
-import productIcon from '../assets/icons/product-icon.svg';
+import { colors, typography } from '../../designSystem';
+import dashboardIcon from '../../assets/icons/dashboard-icon.svg';
+import salesIcon from '../../assets/icons/sales-icon.svg';
+import productIcon from '../../assets/icons/product-icon.svg';
+
 import './NavBar.css';
 
 const NavBar = () => {
@@ -16,8 +17,8 @@ const NavBar = () => {
         padding: '16px',
       }}
     >
-      <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
-        <li style={{ marginBottom: '8px' }}>
+      <ul>
+        <li>
           <button
             style={{
               display: 'flex',
@@ -33,7 +34,7 @@ const NavBar = () => {
             Dashboard
           </button>
         </li>
-        <li style={{ marginBottom: '8px' }}>
+        <li>
           <button
             style={{
               display: 'flex',

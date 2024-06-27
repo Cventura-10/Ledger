@@ -1,9 +1,5 @@
-/* src/components/GraphsCharts/GraphsCharts.css */
-.chart-container {
-    background-color: #003366;
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 4px;
-    padding: 16px;
-  }
-  
+/* /Users/carlosventura/Documents/GitHub/ledger-app/new-frontend/src/components/GraphsCharts/GraphsCharts.css */
+canvas {
+  width: 100%;
+  height: 400px;
+}

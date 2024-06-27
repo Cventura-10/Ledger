@@ -1,28 +1,28 @@
 /* src/Pages/DashboardPage.css */
+
 .dashboard-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px;
-  }
-  
-  .dashboard-left {
-    flex: 2;
-    padding-right: 16px;
-  }
-  
-  .dashboard-right {
-    flex: 1;
-    padding-left: 16px;
-  }
-  
-  @media (max-width: 768px) {
-    .dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.dashboard-left {
+  flex: 2;
+  padding-right: 16px;
+}
+
+.dashboard-right {
+  flex: 1;
+  padding-left: 16px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
       flex-direction: column;
-    }
-  
-    .dashboard-left,
-    .dashboard-right {
-      padding: 0;
-    }
   }
-  
+
+  .dashboard-left,
+  .dashboard-right {
+      padding: 0;
+  }
+}
